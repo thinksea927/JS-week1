@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+html(lang="en")
+    head
+        meta(charset="UTF-8")
+        meta(name="viewport", content="width=device-width, initial-scale=1.0")
+        //- link(rel="stylesheet", href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;700&display=swap")
+        link(rel="stylesheet", href="https://fonts.googleapis.com/icon?family=Material+Icons")
+        link(rel="stylesheet", href="css/index.css")
+        //- script(src="https://code.jquery.com/jquery-3.3.1.slim.min.js")
+        //- script(src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js")
+        script(src="script.js")
+        title week1
+    body
+        .container
+            .card
+                .card-title To Do List
+                .card-body
+                    .d-flex
+                        input(type="text" placeholder="Add task..." id="inputData")
+                        .material-icons#addItem add_circle
+                    ul#itemList
+                        li
+                            input.taskCheck(type="checkbox")
+                            //- span.material-icons check_circle
+                            label.text Lorem ipsum dolor sit amet consectetur adipisicing elit. Eveniet quam fugit, nam odit quibusdam ipsa sit placeat consectetur voluptate ex.
+                            .taskDel.material-icons remove_circle
+                #taskLeft.d-flex
+                    span X tasks to go
+                    span#taskDelAll delete all
+
+
+
+
+            
