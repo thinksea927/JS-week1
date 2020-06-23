@@ -71,6 +71,11 @@ li {
   text-decoration: line-through;
 }
 
+input[type="checkbox"] {
+  height: 20px;
+  cursor: pointer;
+}
+
 input[type="text"] {
   outline-style: none;
   border: none;
@@ -156,6 +161,12 @@ li .material-icons {
   font-size: 32px;
 }
 
+li:hover {
+  background-color: #ffc15b;
+  -webkit-transform: scale(1.05);
+          transform: scale(1.05);
+}
+
 .text {
   width: 80%;
   padding: 8px;
@@ -164,7 +175,6 @@ li .material-icons {
 .taskCheck {
   width: 10%;
   padding: 10px;
-  opacity: 1;
 }
 
 .taskDel {

@@ -10,12 +10,15 @@ window.onload = function(){
     var data = [
         {
             itemText: 'test1',
+            completed: true
         },
         {
             itemText: 'test1',
+            completed: true
         },
         {
             itemText: 'test2',
+            completed: false
         }
     ];
     
@@ -40,20 +43,15 @@ window.onload = function(){
         
     }
     
-    // 我拿不到 item.id QQ 這哪來的
     function completedData(e){
-        data.forEach(function(item){
-            // if(e.target.dataset.id == item.id){
-            //     if(item.completed){
-            //         item.completed = false;
-            //     } else {
-            //         item.completed = true;
-            //     }
-            // }
-            if(item.completed){
-                item.completed = false;
-            } else {
-                item.completed = true;
+
+        data.forEach(function(item, i){
+            if(e.target.dataset.id == i){
+                if(item.completed){
+                    item.completed = false;
+                } else {
+                    item.completed = true;
+                }
             }
 
         })
@@ -66,16 +64,16 @@ window.onload = function(){
         var string = "";
         data.forEach(function(item, i){
             string = string + 
-            `<li>
+            `<li >
             <input class="taskCheck" type="checkbox" data-id="${i}" ${item.completed ? 'checked' : ''}/>
-            <label class="text ${item.completed ? 'completed' : ''}" data-id="${i}" >${ item.itemText }</label>
-            <div class="taskDel material-icons" data-id="${i}">remove_circle</div>
+            <label class="text ${item.completed ? 'completed' : ''}"  >${ item.itemText }</label>
+            <div class="taskDel material-icons">remove_circle</div>
             </li>`
         })
         
         itemList.innerHTML = string;
         
-        // 在每個刪除按鈕上加上監聽 (重要阿 自己忘記加了 弄很久 幸好有想到)
+        // 在每個刪除按鈕上加上監聽
         var taskDel = document.querySelectorAll('.taskDel');
         taskDel.forEach(function(del){
             del.addEventListener('click', removeData)
